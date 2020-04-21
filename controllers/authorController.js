@@ -30,8 +30,14 @@ const addAuthor = async (req, res) => {
 };
 
 // function to get author by id
-const getAuthorByID = (req, res) => {
-  res.send("Working on this feature");
+const getAuthorByID = async (req, res) => {
+  try{
+    const intended = await Author.findOne({"id":req.params.id});
+    return res.send(intended);
+  } catch(err){
+    res.status(400);
+    return res.send("F**k up here");
+  }
 };
 
 // remember to export the functions
