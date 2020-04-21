@@ -26,7 +26,7 @@ const updateAuthor = async (req, res) => {
 
 // function to add author
 const addAuthor = async (req, res) => {
- res.send("Working on this feature");
+ res.send("Working on this featureeeeeeeeeeeeeeee");
 };
 
 // function to get author by id
