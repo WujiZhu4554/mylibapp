@@ -8,5 +8,7 @@ const authorController = require('../controllers/authorController.js');
 authorRouter.get('/', (req, res) => authorController.getAllAuthors(req, res));
 
 authorRouter.get('/:id', (req, res) => authorController.getAuthorByID(req, res));
+
+authorRouter.get('/add', (req, res) => res.redirect("../public/create.html"));
 // export the router
 module.exports = authorRouter;
