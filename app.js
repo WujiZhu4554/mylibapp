@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("<H1>Library System</H1>");
 });
-get('/add', (req, res) => res.redirect("/public/create.html"))
+app.get('/add', (req, res) => res.redirect("/public/create.html"));
 // handle author-management related requests
 // first import the author router
 const authorRouter = require("./routes/authorRouter");
