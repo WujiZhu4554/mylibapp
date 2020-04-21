@@ -10,5 +10,7 @@ authorRouter.get('/', (req, res) => authorController.getAllAuthors(req, res));
 authorRouter.get('/:id', (req, res) => authorController.getAuthorByID(req, res));
 
 authorRouter.get('/add/:id&:first_name&:last_name', (req, res) => authorController.addAuthor(req, res));
+
+authorRouter.get('/update/:id&:first_name&:last_name', (req, res) => authorController.addAuthor(req, res));
 // export the router
 module.exports = authorRouter;

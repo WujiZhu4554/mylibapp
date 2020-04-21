@@ -21,7 +21,26 @@ const getAllAuthors = async (req, res) => {
 
 // function to modify author by ID
 const updateAuthor = async (req, res) => {
-  res.send("Working on this feature");
+  const had = await Author.findOne({"id":req.params.id});
+  if(!had){
+    return res.send("No such user, create one first");
+  }
+  const same = await Author.findOne({
+    "id":req.params.id,
+    "first_name":req.params.first_name,
+    "last_name":req.params.last_name
+  });
+  if(same){
+    return res.send("Already uptodate");
+  }
+  else{
+    const update = await Author.findOneAndUpdate({"id":req.params.id},
+    {
+     "first_name":req.params.first_name,
+     "last_name":req.params.last_name 
+    });
+    return res.send(update);
+  }
 };
 
 // function to add author
