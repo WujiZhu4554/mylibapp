@@ -1,0 +1,23 @@
+{
+  "name": "mylibapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WujiZhu4554/mylibapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WujiZhu4554/mylibapp/issues"
+  },
+  "homepage": "https://github.com/WujiZhu4554/mylibapp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
