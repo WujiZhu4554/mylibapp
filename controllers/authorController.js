@@ -26,8 +26,17 @@ const updateAuthor = async (req, res) => {
 
 // function to add author
 const addAuthor = async (req, res) => {
- res.send(req.params.id);
- res.send("Working on this featureeeeeeeeeeeeeeee");
+  const had = await Author.findOne({"id":req.params.id});
+  if(!had){
+    const result = await Author.create({
+      "id":req.params.id,
+      "first_name":req.params.first_name,
+      "last_name":req.params.last_name
+    });
+    return res.send(result);
+  }else{
+    return res.send("User already exist");
+  }  
 };
 
 // function to get author by id
